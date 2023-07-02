@@ -1,0 +1,19 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.title__container{
+    h1{
+        @include m.title-border(v.$green);
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+.img-profile{
+    border-radius: 50%;
+    overflow: hidden;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

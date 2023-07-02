@@ -1,0 +1,35 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.form__modify__container{
+    .buttons__container{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        &>input,button,a{
+            flex: 1;
+            @include m.tablet{
+                flex: unset;
+            }
+        }
+    }
+    // .btn-modify, .btn-add{
+    //     width: 100%;
+    //     @include m.tablet{
+    //         width: unset;
+    //     }
+    // }
+    &.register__section{
+        #btn-deleteAvatar{
+            flex: none;
+        }
+        .profile-image-section{
+            figure{
+                img{
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+

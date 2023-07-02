@@ -1,0 +1,94 @@
+{
+  "_axios-ca6126ea.js": {
+    "file": "assets/axios-ca6126ea.js"
+  },
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
+    "file": "assets/bootstrap-icons-c6569d46.woff",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff"
+  },
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2": {
+    "file": "assets/bootstrap-icons-966620f9.woff2",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
+  },
+  "resources/css/app.scss": {
+    "file": "assets/app-7c45a4f4.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/fonts/Montserrat-Medium.ttf": {
+    "file": "assets/Montserrat-Medium-20ebfd65.ttf",
+    "src": "resources/fonts/Montserrat-Medium.ttf"
+  },
+  "resources/fonts/Montserrat-Regular.ttf": {
+    "file": "assets/Montserrat-Regular-dcfe8df2.ttf",
+    "src": "resources/fonts/Montserrat-Regular.ttf"
+  },
+  "resources/fonts/WorkSans-Regular.ttf": {
+    "file": "assets/WorkSans-Regular-1b94e0d8.ttf",
+    "src": "resources/fonts/WorkSans-Regular.ttf"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-7c45a4f4.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/bootstrap-icons-966620f9.woff2",
+      "assets/bootstrap-icons-c6569d46.woff",
+      "assets/Montserrat-Regular-dcfe8df2.ttf",
+      "assets/Montserrat-Medium-20ebfd65.ttf",
+      "assets/WorkSans-Regular-1b94e0d8.ttf"
+    ],
+    "css": [
+      "assets/app-7c45a4f4.css"
+    ],
+    "file": "assets/app-0fea4214.js",
+    "imports": [
+      "_axios-ca6126ea.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/bootstrap.js": {
+    "file": "assets/bootstrap-3366d346.js",
+    "imports": [
+      "_axios-ca6126ea.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/bootstrap.js"
+  },
+  "resources/js/calendar.js": {
+    "file": "assets/calendar-ebed75dc.js",
+    "isEntry": true,
+    "src": "resources/js/calendar.js"
+  },
+  "resources/js/cart.js": {
+    "file": "assets/cart-5b0794a7.js",
+    "isEntry": true,
+    "src": "resources/js/cart.js"
+  },
+  "resources/js/color-theme.js": {
+    "file": "assets/color-theme-2ba83fba.js",
+    "isEntry": true,
+    "src": "resources/js/color-theme.js"
+  },
+  "resources/js/jquery-3.6.3.js": {
+    "file": "assets/jquery-3.6.3-65bc4b45.js",
+    "isEntry": true,
+    "src": "resources/js/jquery-3.6.3.js"
+  },
+  "resources/js/posts.js": {
+    "file": "assets/posts-8e2d7e3e.js",
+    "isEntry": true,
+    "src": "resources/js/posts.js"
+  },
+  "resources/js/validation_form.js": {
+    "file": "assets/validation_form-2edf1ea0.js",
+    "isEntry": true,
+    "src": "resources/js/validation_form.js"
+  },
+  "resources/js/wishlist.js": {
+    "file": "assets/wishlist-d214ba46.js",
+    "isEntry": true,
+    "src": "resources/js/wishlist.js"
+  }
+}

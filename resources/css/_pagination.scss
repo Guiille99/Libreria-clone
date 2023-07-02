@@ -1,0 +1,20 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+nav:has(.pagination){
+    div:nth-child(2){
+        justify-content: center !important;
+        gap: 40px;
+    }
+}
+.pagination{
+    .page-item{
+        width: fit-content;
+    }
+    .page-link{
+        font-size: .9rem;
+        @include m.tablet{
+            font-size: unset;
+        }
+    }
+}

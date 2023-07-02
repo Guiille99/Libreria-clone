@@ -1,0 +1,230 @@
+@use "variables" as v;
+@use "sass:color" as color;
+
+/*Mixin para crear efecto en los enlaces del nav*/
+@mixin efectoNavLinks($color, $altura, $bottom, $seg){
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: $bottom;
+        display: block;
+        background-color: $color;
+        height: $altura;
+        width: 0%;
+        transition: all $seg;
+    }
+    &:hover::before{
+        width: 75%;
+    }
+}
+//Imagen de fondo
+@mixin bg-image($imagen){
+    background-image: url('uploads/'+#{$imagen});
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+// Mixin para crear fondo oscuro
+@mixin bg-dark(){
+    background-color: #00000085;
+}
+
+// Mixin para crear un botón
+@mixin btn($bgcolor, $fcolor){
+    background-color: $bgcolor;
+    border-radius: 0.7rem;
+    border: none;
+    color: $fcolor;
+    display: block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover{
+        background-color: color.scale($bgcolor, $lightness: -30%);
+        cursor: pointer;
+    }
+    &:disabled{
+        background-color: color.scale($bgcolor, $lightness: 60%);
+    }
+}
+
+@mixin btn-outline($bgcolor, $bordercolor){
+    background-color: $bgcolor;
+    border: 1px solid $bordercolor;
+    color: $bordercolor;
+    padding: 8px 20px;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+
+    &:hover{
+        background-color: $bordercolor;
+        color: $bgcolor;
+    }
+}
+
+@mixin btnCartTable($bgcolor, $fcolor){
+    background-color: $bgcolor;
+    border: 1px solid $fcolor;
+    text-decoration: none;
+    padding: 5px 10px;
+    color: $fcolor;
+    transition: all .5s ease;
+    &:hover{
+        background-color: $fcolor;
+        color: $bgcolor;
+    }
+}
+
+// Grid
+@mixin grid($columns, $gap){
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+//Efecto oscuro para los bg
+@mixin dark-effect-bg($duration){
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        background-size: cover;
+        background-position: center center;
+        z-index: 0;
+        transition: all $duration;
+    }
+    &:hover::before{
+        transform: scale(1.2);
+        filter: brightness(0.5);
+    }
+}
+//Mixin para crear iconos del footer
+@mixin icon-footer($bgcolor, $color, $padding, $border-radius){
+    background-color: $bgcolor;
+    color: $color;
+    padding: $padding;
+    border-radius: $border-radius;
+    transition: all 0.3s ease;
+    &:hover{
+        background-color: v.$green;
+        svg, i{
+            color: white;
+        }
+    }
+}
+
+// Mixin para gradiente del formulario
+@mixin form-gradient($deg, $color){
+    background: linear-gradient(#{$deg}deg, color.scale($color, $lightness: -30%), color.scale($color, $lightness: 30%));
+}
+
+//Mixin para subrayado de los títulos
+@mixin title-border($color){
+    // display: inline-block;
+        position: relative;
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            background-color: $color;
+            height: 2px;
+            width: 100%;
+        }
+}
+
+//Estilo de título subrayado
+@mixin outline-title($color){
+    font-size: 1.3rem;
+    font-weight: bolder;
+    border-bottom: 1px solid $color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet{
+        flex-direction: row;
+    }
+    p{
+        margin-bottom: 5px;
+    }
+}
+
+//Estilo de los títulos de los post
+@mixin titulo-post{
+    color: v.$white;
+    padding: 3px;
+    background: linear-gradient(45deg, transparent, v.$black);
+    font-size: 1rem;
+    font-weight: bold;
+    @include tablet{
+        font-size: 2rem;
+    }
+}
+@mixin efectoImgPost{
+    transform: scale(1.2);
+    filter: brightness(0.5);
+    cursor: pointer;
+}
+
+@mixin comentarios-section{
+    margin-top: 20px;
+    .title{
+        border-bottom: 1px solid v.$black;
+        p{
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+    }
+    .comentarios{
+        padding: 10px 0px;
+        .comentario{
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            border-bottom: 1px solid v.$black;
+            font-size: .8rem;
+            figure{
+                min-height: 35px;
+                min-width: 35px;
+                max-height: 35px;
+                max-width: 35px;
+            }
+            .user__info{
+                &-username-date{
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+
+                    .date{
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Media-query
+// Media queries
+@mixin mobile{
+    @media screen and (min-width: v.$small) {
+        @content;
+    }
+}
+@mixin tablet{
+    @media screen and (min-width: v.$medium) {
+        @content;
+    }
+}
+@mixin desktop{
+    @media screen and (min-width: v.$big) {
+        @content;
+    }
+}

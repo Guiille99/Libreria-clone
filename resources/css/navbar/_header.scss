@@ -1,0 +1,40 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.header-2{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    @include m.desktop{
+        position: unset;
+        padding-top: 60px;
+    }
+}
+
+.nav-top,.down-nav{
+    .cuenta-carrito{
+        align-items: center;
+        gap: 1rem;
+        @include m.desktop{
+            gap: 1.2rem;
+        }
+        .login__container{
+            figure{
+                height: v.$tamNavIcon;
+                width: v.$tamNavIcon;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        img{
+            height: v.$tamNavIcon;
+            width: v.$tamNavIcon;
+            min-height: v.$tamNavIcon;
+            min-width: v.$tamNavIcon;
+            border-radius: 50%;
+        }
+    }
+}

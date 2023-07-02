@@ -1,0 +1,133 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.sidebar{
+    background-color: v.$sidebar-bg;
+    width: v.$sidebar-width;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    transition: left 300ms;
+
+    .sidebar-body{
+        .user__info{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            figure{
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                overflow: hidden;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            &__data{
+                .username{
+                    font-weight: bolder;
+                }
+                .rol{
+                    font-size: .8rem;
+                    font-weight: lighter;
+                }
+            }
+        }
+        ul{
+            list-style: none;
+            li{
+                padding: 5px;
+                &:hover{
+                    background-color: v.$white;
+                    a,button{
+                        color: v.$black;
+                    }
+                }
+            }
+            .accordion-item{
+                button{
+                    gap: 10px;
+                    &::after{
+                        margin-left: unset;
+                    }
+                }
+                .accordion-body{
+                    ul{
+                        width: 100%;
+                        padding: 0;
+                        li{
+                            border-bottom: 1px solid v.$white-dark-mode;
+                            &:hover{
+                                background-color: v.$sidebar-bg;
+                                a{
+                                    color: v.$white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .dropdown-menu{
+                li{
+                    a{
+                        color: unset;
+                    }
+                    &:hover{
+                        background-color: v.$green;
+                        color: v.$white;
+                    }
+                }
+            }
+        }
+        a{
+            color: v.$white;
+            text-decoration: none;
+        }
+    }
+
+    .btn-close{
+        position: absolute;
+        top: 5px;  
+        right: 5px;
+        
+        @include m.desktop{
+            display: none;
+        }
+    }
+}
+.main-content{
+    transition: margin-left 300ms;
+}
+
+#body-label{
+    position: fixed;
+    top: 0;
+    right: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: v.$black;
+    opacity: 0.8;
+    z-index: 2;
+
+    @include m.desktop{
+        background-color: transparent;
+        z-index: -1;
+    }
+}
+
+#toggler-sidebar{
+    display: none;
+}
+#toggler-sidebar:checked ~ .sidebar{
+    left: -100%;
+}
+#toggler-sidebar:checked ~ #body-label{
+    right: -100%;
+}
+#toggler-sidebar:checked ~ .main-content{
+    margin-left: 0;
+}
