@@ -8,7 +8,7 @@ $(document).ready(function(){
     $(".togglePassword").click(togglerPassword);
     $("#togglePasswordConfirm").click(togglerPasswordConfirm);
     $("#btnBack").click(goToUp);
-
+//Prueba
     //Evento que se ejecuta cuando añado o elimino un libro a la wishlist
     $(document).on('toggle-wishlist', function(event){
         $('body').append("<div id='alert-index' class='alert alert-success'><i class='bi bi-check-circle'></i> "+ event.detail.message +"</div>");
